@@ -1,0 +1,33 @@
+[
+
+  {
+    "id": "project-01",
+    "title": "AIサービスのLP",
+    "category": "Web Design",
+    "imgUrl": "image/ai_service.png",
+    "description": "架空のAIサービスのLPで名前にフルーツが入っていたことからフルーツバスケットをイメージして制作しました。"
+  },
+  {
+    "id": "project-02",
+    "title": "おにぎり屋のLP",
+    "category": "Web Design",
+    "imgUrl": "image/onigiri.png",
+    "description": "おにぎりの柔らかさを取り入れたデザインにしました。"
+  },
+  {
+    "id": "project-03",
+    "title": "眼鏡屋のHP",
+    "category": "Web Design",
+    "imgUrl": "image/glasses.png",
+    "description": "エコ素材でできた眼鏡から自然をイメージして制作しました。"
+  },
+  {
+    "id": "project-04",
+    "title": "イベントバナー",
+    "category": "Web Design",
+    "imgUrl": "image/event-banner.png",
+    "description": "夜のイベント紹介バナーで夜、キャンプファイヤーなどのワードを取り入れたデザインにしました。"
+
+  }
+
+]
