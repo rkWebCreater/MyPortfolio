@@ -1,0 +1,158 @@
+<head>
+   
+  <meta charset="utf-8">
+
+  <meta name="description" content="私のポートフォリオです。"><!--WEBサイト検索をした時に出てくる、説明エリアです。-->
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/reset.css"><!--ブラウザのデフォルトcssを打ち消すため使用-->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"><!--FontAwesome-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Reggae+One&family=Rubik+Dirt&display=swap" rel="stylesheet"><!--Google font-->
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script><!--googleのjquery適用(CDN)-->
+
+</head>
+<body>
+ <section class="mainVisual_section" aria-labelledby ="mainvisual-heading">
+  <div class="mainVisual">
+    <h1>My Portforio</h1>
+    <div class="images">
+     
+     <div class="img1 js_img"><img src="image/potato.png" ></div>
+     <div class="img2 js_img"><img src="image/photo_app.png"></div>
+     <div class="img3 js_img"><img src="image/system.png"></div>
+     <div class="img4 js_img"><img src="image/icecream.png"></div>
+     <div class="img5 js_img"><img src="image/beauty_salon.png"></div>
+     <div class="img6 js_img"><img src="image/toothpaste.png"></div>
+
+     <!-- .images の配下のimgの繰り返し処理(phpで書く場合) 
+        $items = [
+                  ['class' => '' , 'image'=>'/image/'],
+                  ['class' => '' , 'image'=>'/image/'],
+                  ['class' => '' , 'image'=>'/image/'],
+                  ['class' => '' , 'image'=>'/image/'],
+                  ['class' => '' , 'image'=>'/image/'],
+                  ['class' => '' , 'image'=>'/image/']
+                  
+        ]
+        <?php foreach($images as $image): ?> 
+        
+        <img class ="<?php echo $item['class'] ?>" src="<?php echo $item['image'] ?>">
+        
+        <?php endforeach:?>
+        
+    -->
+        
+    </div>
+  </div>
+    
+  
+ </section>
+ 
+
+<section class="about_section" aria-labelledby ="about-heading">
+  <div class="about">
+   <div class="about_ttl_wrapper">
+    <div class="about_ttl">
+     <h1>経歴</h1>
+     <h2 class="back">Back</h2>
+     <h2 class="ground">ground</h2>
+     <img src="image/myImage.png">
+    </div>
+   </div>
+   <div class="about_txt">
+    <ul>
+     <li>webデザイナーとして2年半フルリモート勤務</li>
+     <li>ソフトウェアのデバッグなどテスト業務</li>
+     <li>倉庫内軽作業、工場でのピッキング・仕分け</li>
+    </ul>
+    <p>Web制作を独学して挫折を経験し、オンライン講座で自分に足りないデザイン力を鍛えるとともに
+     WordpressやPHP,Javascript も再度挑戦してこのポートフォリオを
+     制作しました。</p>
+    </div>
+   </div>
+</section>
+
+<section class="skills_section" aria-labelledby ="skill-heading"> 
+  <ul class="skills_wrapper">
+   <li class="skill-ttl" >
+     <h1>スキル</h1>
+   </li>
+   <div class ="skill-contents">
+    
+    <li class="skill web">
+     <div class="img">
+      <p></p>
+      <img src="image/web_img.png">
+     </div>
+     <div class="ttl_desc">
+      <h1>ウェブサイト制作</h1>
+      <p>お客様の要望を聞きウェブサイトを提案いたします。
+        デザインやコーディング、ワードプレスでの制作を主としており、相談のみも承っております。</p>
+     </div>
+    </li>
+    <li class="skill coding">
+     <div class="img">
+      <p></p>
+      <img src="image/coding_img.png">
+     </div>
+     <div class="ttl_desc">
+      <h1>コーディング</h1>
+      <p>html,css,JavaScript,WordPressで制作します。
+         プログラムを作成からチェックして納品まで一貫してますのでご安心してください。</p>
+     </div>
+    </li>
+    <li class="skill banner">
+     <div class="img">
+      <p></p>
+      <img src="image/banner_img.png">
+     </div>
+     <div class="ttl_desc">
+      <h1>バナーデザイン</h1>
+      <p>どのようなバナーでも一度ご相談ください。
+         Google広告や会社サイトバナーなど幅広く制作した実績があります。</p>
+     </div>
+    </li>
+   </div>
+
+  </ul>
+</section>
+
+<section class="product_section" aria-labelledby ="product-heading">
+ 
+ <div class="product">
+  <div class="product_ttl">
+   <h1>Product</h1>
+   <h2>Product</h2>
+   <p>作品紹介</p>
+  </div>
+
+  <div class="product_contents" id="product-con">
+   <!-- jsで作成した繰り返し処理が入る
+    
+   <div class="content">
+    <div class="img_ttl">
+     <img src="image/画像">
+     <p>タイトル</p>
+    </div>
+   </div>　
+   
+   -->
+  </div>
+ </div>
+
+<canvas id=""></canvas>
+
+</section>
+
+<p class="copyright">©️ All rights reserved. </p>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script> <!--jsライブラリはbody終了タグの直前でdefer属性を付与してかつ自作のjsより前で読み込む-->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+<script src="style.js" async></script> <!--jsファイルはbody終了タグの直前でasync属性を付与して読み込む-->
+
+
+</body>
