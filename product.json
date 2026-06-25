@@ -3,31 +3,41 @@
   {
     "id": "project-01",
     "title": "AIサービスのLP",
-    "category": "Web Design",
-    "imgUrl": "image/ai_service.png",
-    "description": "架空のAIサービスのLPで名前にフルーツが入っていたことからフルーツバスケットをイメージして制作しました。"
+    "imgUrl": "image/product/ai_service.png",
+    "mainImg": "image/detail/web-ai.png",
+    "description": "ターゲットは主に先進的なサービスを提供している法人で複数のAIサービスを一元で利用できるサービスとわかるようにHPのような作りで説明をしバナーやボタンで資料請求や問い合わせに誘導するのが目的です。また、「fruitsbar」という名前なので少し女性寄りの明るいデザインで制作しました。"
   },
   {
     "id": "project-02",
     "title": "おにぎり屋のLP",
-    "category": "Web Design",
-    "imgUrl": "image/onigiri.png",
-    "description": "おにぎりの柔らかさを取り入れたデザインにしました。"
+    "imgUrl": "image/product/onigiri.png",
+    "mainImg": "image/detail/",
+    "description": "架空のおにぎり屋のLPを制作しました。ターゲットは30〜40代のOL、サラリーマンで和の雰囲気を醸し出すようなデザインにしました。おにぎりの米が白いことから白をベースに、まな板や木などの色を使い和の雰囲気のお店感を出すために薄い茶色をメインカラーにしましてデザインの統一感を出しました。またキャンペーンからお店の情報、メニュー、お客様の声、フッターと集客導線を意識した順番にしました。"
   },
   {
     "id": "project-03",
     "title": "眼鏡屋のHP",
-    "category": "Web Design",
-    "imgUrl": "image/glasses.png",
-    "description": "エコ素材でできた眼鏡から自然をイメージして制作しました。"
+    "imgUrl": "image/product/glasses.png",
+    "mainImg": "image/detail/web-glasses(PC).png",
+    "description": "架空メガネブランド「Lunettes」(ルネット)の会社のコーポレートサイトです。ターゲットは20〜30代男女で白ベースにメインカラーに緑を選びました。このメガネは環境にやさしい素材で作られているため自然や安心感をイメージして緑を選び、人物写真も比較的若めの男女を選び制作しました。"
   },
   {
     "id": "project-04",
     "title": "イベントバナー",
-    "category": "Web Design",
-    "imgUrl": "image/event-banner.png",
-    "description": "夜のイベント紹介バナーで夜、キャンプファイヤーなどのワードを取り入れたデザインにしました。"
+    "imgUrl": "image/product/event-banner.png",
+    "mainImg": "image/detail/event-banner.png",
+    "description": "20代～30代の男女向けのイベント紹介バナーで夜、キャンプファイヤーなどのワードを取り入れたデザインにしました。"
 
+  },
+  {
+  
+    "id": "project-05",
+    "title": "フードデリバリーバナー",
+    "imgUrl": "image/product/food_coupon.png",
+    "mainImg": "image/detail/food_coupon.png",
+    "description": ""
+
+  
   }
 
 ]

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>作品詳細ページ</title>
+  <link rel="stylesheet" href="css/detail.css"> <!-- あなたの既存のCSS -->
+</head>
+<body>
+
+  <!-- メインコンテンツの外枠 -->
+  <main class="detail-main">
+    <div class="container">
+
+      <!-- 一覧に戻るボタン -->
+      <div class="back-nav">
+        <a href="index.html">← 作品一覧に戻る</a>
+      </div>
+
+      <!-- 作品の詳細エリア -->
+      <article id="product-detail">
+        
+        <div class="detail-grid">
+          <!-- 2. 作品のメイン画像 -->
+          <div class="detail-thumb">
+            <!-- 1. 作品タイトル（読み込み中は一時的に文字を表示） -->
+            <h1 id="detail-title" class="main-title">作品を読み込み中...</h1>
+            <img id="detail-img" src="" alt="">
+          </div>
+          
+          <!-- 3. 作品のテキスト情報 -->
+          <div class="detail-info">
+            
+            <!-- 説明文 -->
+            <div class="info-block">
+              <h2>作品について</h2>
+              <p id="detail-description"></p>
+              
+            </div>
+            <img id="mainImg" src="" alt="">
+            
+
+          </div>
+        </div>
+
+      </article>
+
+    </div>
+  </main>
+
+  <!--  詳細ページ専用のJavaScriptを読み込む　-->
+  <script src="js/detail.js"></script>
+</body>
+</html>

@@ -121,7 +121,7 @@ window.addEventListener("pageshow", function(event){
 
 //---------   gsap アニメーション　初期化    --------------------
 /* `performance.navigation.type` を使用して、戻るボタン操作を100%確実に検知 
-   window.performance ブラウザに「ページの読み込みに関するデータをください」と確認しています。古いブラウザでエラーが出ないための安全装置
+   window.performance ブラウザに「ページの読み込みに関するデータをください」と確認している。古いブラウザでエラーが出ないための安全装置
    navigation.type === 2：ブラウザの規則で、数字の 2 は「戻るボタンまたは進むボタンが押されたこと」 を意味する
 */
   const isBack = event.persisted || (window.performance && window.performance.navigation.type === 2);
