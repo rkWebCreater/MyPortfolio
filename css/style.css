@@ -1,23 +1,24 @@
 /*デフォルト　スマホ*/  
    .mainVisual_section{
-         width: 100% !important;
+         width: 100% ;
          overflow: hidden;
-         background: linear-gradient(150deg, #b1f1f8ce 0%, #b9b7ffd0 100%);
-         animation: Grad 4s infinite alternate;
          margin-bottom:120px;
+         /* 226degのまま、サイズを縦横2倍にする */
+         background: linear-gradient(2deg, #b1f1f8ce 0%, #b9b7ffd0 100%);
+         background-size: 200% 200%;
+         animation: colorMotion 3s  infinite alternate ease-in-out;
 
-         @keyframes Grad {
-            
-              0% {
-                 -webkit-filter: hue-rotate(0deg);
-                 filter: hue-rotate(0deg);
-              }
 
-              100% {
-                   -webkit-filter: hue-rotate(360deg);
-                   filter: hue-rotate(360deg);
-              }
+         @keyframes colorMotion {
+                               0% {
+                                 background-position: 0% 0%;
+                               }
+                              
+                                100% {
+                                     background: 100% 100%;
+                               }
          }
+
 
          & .mainVisual {
 
@@ -154,7 +155,7 @@
                      font-style: normal;
                      width: 200px;
                      height: 150px;
-                     background:url(../image/skill-ttl_bg.png);
+                     background:url(../image/skill/skill-ttl_bg.png);
                      background-size: cover;
                      margin-left: auto;
                      margin-right: auto;
@@ -213,6 +214,8 @@
                          background:color(srgb 1 1 1 / 0.9);
                          padding:15px;
                          position:absolute;
+                         top: 15px;
+                         left: 18px;
               
                        & h1{
                            margin-bottom:20px;
@@ -333,10 +336,6 @@
     
 
 
-    /* タブレット */
-@media (min-width:768px) {
-    
-}
     /* PC */
 @media(min-width:1024px){
 
