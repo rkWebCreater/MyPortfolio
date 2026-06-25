@@ -21,7 +21,7 @@ window.addEventListener("DOMContentLoaded", function(){
         //一致する作品が見つかったらhtmlの各要素にデータを流し込む
         if(currentProduct){
 
-            //タイトルを上書き
+            //htmlに書いてある親要素のidタグの値にタイトルを上書き
             document.getElementById('detail-title').textContent = currentProduct.title;
 
             //画像を設定（srcとalt属性を上書き）
@@ -31,8 +31,10 @@ window.addEventListener("DOMContentLoaded", function(){
 
             //追加した詳細データをテキストとして流し込む（textContentを使う　innerHTMLは使わない jsonのデータ項目から）
             document.getElementById('detail-description').textContent = currentProduct.description;
-            document.getElementById('detail-period').textContent = currentProduct.period;
-            document.getElementById('detail-skills').textContent = currentProduct.skills;
+
+            const mainImg = document.getElementById('mainImg');
+            mainImg.src = currentProduct.mainImg;
+            mainImg.alt = currentProduct.title;
 
         } else{
             //IDが間違っていてデータが見つからない場合
