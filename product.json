@@ -8,11 +8,12 @@
     "description": "ターゲットは主に先進的なサービスを提供している法人で複数のAIサービスを一元で利用できるサービスとわかるようにHPのような作りで説明をしバナーやボタンで資料請求や問い合わせに誘導するのが目的です。また、「fruitsbar」という名前なので少し女性寄りの明るいデザインで制作しました。"
   },
   {
+  
     "id": "project-02",
-    "title": "おにぎり屋のLP",
-    "imgUrl": "image/product/onigiri.png",
-    "mainImg": "image/detail/",
-    "description": "架空のおにぎり屋のLPを制作しました。ターゲットは30〜40代のOL、サラリーマンで和の雰囲気を醸し出すようなデザインにしました。おにぎりの米が白いことから白をベースに、まな板や木などの色を使い和の雰囲気のお店感を出すために薄い茶色をメインカラーにしましてデザインの統一感を出しました。またキャンペーンからお店の情報、メニュー、お客様の声、フッターと集客導線を意識した順番にしました。"
+    "title": "フードデリバリーバナー",
+    "imgUrl": "image/product/food_coupon.png",
+    "mainImg": "image/detail/food_coupon.png",
+    "description": "ラーメンやチャーハンなど男性が多い中華料理なのでメインカラーにビビット系統の赤色を使い、某フードデリバリーを参考にそのECサイトにあるようなイメージでデザインしました。"
   },
   {
     "id": "project-03",
@@ -26,18 +27,8 @@
     "title": "イベントバナー",
     "imgUrl": "image/product/event-banner.png",
     "mainImg": "image/detail/event-banner.png",
-    "description": "20代～30代の男女向けのイベント紹介バナーで夜、キャンプファイヤーなどのワードを取り入れたデザインにしました。"
+    "description": "20代～30代の男女向けのイベント紹介バナーでキャンプファイヤーなどの画像を取り入れ、文字や画像に柔らかい雰囲気をもたせてターゲット層に親近感を持ってもらうデザインにしました。"
 
-  },
-  {
-  
-    "id": "project-05",
-    "title": "フードデリバリーバナー",
-    "imgUrl": "image/product/food_coupon.png",
-    "mainImg": "image/detail/food_coupon.png",
-    "description": ""
-
-  
   }
-
+  
 ]
