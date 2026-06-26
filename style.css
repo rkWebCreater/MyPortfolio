@@ -478,7 +478,7 @@
                           margin-bottom:25px;
                           display:flex;
                         
-                      &:nth-child(2){
+                       &:nth-child(2){
                                      top:25%;
                                      left:0;
                       }
@@ -503,7 +503,7 @@
 
                       }
                   & .ttl_desc {
-                             width: 400px;
+                             width: 300px;
                              padding: 25px;
                              top: -55px;
                   
@@ -553,6 +553,8 @@
                    font-size:35px;
                    letter-spacing: 25px;
                    position:absolute;
+                   top: 65%;
+                   left: 40%;
               }
         }
         & .product_contents{
