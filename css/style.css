@@ -215,7 +215,7 @@
                          background:color(srgb 1 1 1 / 0.9);
                          padding:15px;
                          position:absolute;
-                         top: 15px;
+                         top: -55px;
                          left: 18px;
               
                        & h1{
