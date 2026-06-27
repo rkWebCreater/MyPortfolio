@@ -25,7 +25,7 @@ window.addEventListener("pageshow", function(){
     scale: 0, width: "50%", height: "50%", left: "25%", top: 0,
   });
   gsap.set(".img4", {
-    scale: 0, width: "50%", height: "50%", left: "40%", top: 0, clipPath:"inset( 0%, 0%, 0%, 0%)"
+    scale: 0, width: "50%", height: "50%", left: "40%", top: 0,
   });
   gsap.set(".img5", {
     scale: 0, width: "50%", height: "50%", left: "55%", top: 0,
@@ -46,23 +46,23 @@ window.addEventListener("pageshow", function(){
     scrollTrigger: {
       trigger: area, //トリガー
       start: "top top", //開始位置
-      end: "+=4000", //終了位置
+      end: "+=2000", //終了位置
       scrub: 5, //ピン留め
       pin: true, //スクロール量に応じて動かす
     }
   });
 
   //要素を順に拡大する(全てを拡大してから順に消えていく)
-  tl.to(".img1", { scale: 0.2, left: "-10%", top: "20%", duration: 0.4 },"-=0.9")
-    .to(".img2", { scale: 0.5, left: "2%", top: "-5%", duration: 0.5 }, "-=0.8")
-    .to(".img3", { scale: 0.5, left: "30%" , top : "30%" , duration: 0.6 }, "-=0.7")
+  tl.to(".img1", { scale: 0.5, left: "-10%", top: "-10%", duration: 0.7 },"-=0.9")
+    .to(".img2", { scale: 0.5, left: "2%", top: "30%", duration: 0.5 }, "-=0.8")
+    .to(".img3", { scale: 0.2, left: "30%" , top : "30%" , duration: 0.6 }, "-=0.7")
     .to(".img4", { scale: 0.4, left: "20%" , top: "-5%", duration: 0.7 },"-=0.6")
     .to(".img5", { scale: 0.1, left: "50%", top: "40%", duration: 0.8 }, "-=0.5")
     .to(".img6", { scale: 0.5, left: "50%" , top : "-20%" , duration: 1 }, "-=1.0")
     .to(".img1", { opacity: 0, filter:"blur(30px)", duration: 1 }, "-=0.5")
-    .to(".img2", { opacity: 0, duration: 1 }, "-=0.3")
+    .to(".img2", { opacity: 0, filter: "grayscale(300%)", duration: 1 }, "-=0.3")
     .to(".img3", { opacity: 0, filter: "sepia(300%)", duration: 1 }, "-=0.7")
-    .to(".img4", { opacity: 0, clipPath: "inset(100%, 0%, 100%, 0%)", ease: "power3.inOut" , duration: 2 }, "-=0.2")
+    .to(".img4", { opacity: 0,  ease: "power3.inOut" , duration: 2 }, "-=0.2")
     .to(".img5", { opacity: 0, duration: 2}, "-=0.5") 
     .to(".img6", { opacity: 0, filter: "grayscale(300%)", duration: 3}, "-=0.8") 
   });
@@ -82,7 +82,7 @@ window.addEventListener("pageshow", function(){
     .to(".img6", { opacity: 0, duration: 3}, "-=0.2") 
     */
     
-  //スマホでの動作
+//スマホ
   mm.add( "(max-width : 768px)",() => {
 
   //matchMediaの中でタイムラインを指定
@@ -90,15 +90,15 @@ window.addEventListener("pageshow", function(){
     scrollTrigger: {
       trigger: area, //トリガー
       start: "top top", //開始位置
-      end: "+=1500", //終了位置
+      end: "+=900", //終了位置
       scrub: 5, //ピン留め
       pin: true, //スクロール量に応じて動かす
     }
   });
   
   //要素を順に拡大する(全てを拡大してから順に消えていく)
-  tl.to(".img1", { scale: 0.1, left: "-25%", top: "-10%", duration: 0.4 },"-=0.9")
-    .to(".img2", { scale: 0.2, left: "30%", top: "5%", duration: 0.5 }, "-=0.8")
+  tl.to(".img1", { scale: 0.2, left: "-25%", top: "-10%", duration: 0.4 },"-=0.9")
+    .to(".img2", { scale: 0.2, left: "30%", top: "20%", duration: 0.5 }, "-=0.8")
     .to(".img3", { scale: 0.2, left: "-25%" , top : "30%" , duration: 0.6 }, "-=0.7")
     .to(".img4", { scale: 0.2, left: "-25%", top: "50%", duration: 0.7 },"-=0.6")
     .to(".img5", { scale: 0.05, left: "20%", top: "30%", duration: 0.8 }, "-=0.5")
@@ -119,7 +119,8 @@ window.addEventListener("pageshow", function(){
 
 window.addEventListener("pageshow", function(event){
 
-//---------   gsap アニメーション　初期化    --------------------
+//---------   gsap アニメーション　再描画（初期化）    --------------------
+
 /* `performance.navigation.type` を使用して、戻るボタン操作を100%確実に検知 
    window.performance ブラウザに「ページの読み込みに関するデータをください」と確認している。古いブラウザでエラーが出ないための安全装置
    navigation.type === 2：ブラウザの規則で、数字の 2 は「戻るボタンまたは進むボタンが押されたこと」 を意味する
@@ -186,3 +187,7 @@ fetch('product.json')
 .catch(error => console.error('データの取得に失敗しました:', error));
 
 });
+
+/* 
+
+ */
