@@ -98,8 +98,8 @@ window.addEventListener("pageshow", function(){
   
   //要素を順に拡大する(全てを拡大してから順に消えていく)
   tl.to(".img1", { scale: 0.2, left: "-25%", top: "-10%", duration: 0.4 },"-=0.9")
-    .to(".img2", { scale: 0.2, left: "30%", top: "20%", duration: 0.5 }, "-=0.8")
-    .to(".img3", { scale: 0.1, left: "-5%" , top : "30%" , duration: 0.6 }, "-=0.7")
+    .to(".img2", { scale: 0.2, left: "30%", top: "5%", duration: 0.5 }, "-=0.8")
+    .to(".img3", { scale: 0.05, left: "-5%" , top : "30%" , duration: 0.6 }, "-=0.7")
     .to(".img4", { scale: 0.2, left: "-25%", top: "50%", duration: 0.7 },"-=0.6")
     .to(".img5", { scale: 0.05, left: "20%", top: "30%", duration: 0.8 }, "-=0.5")
     .to(".img6", { scale: 0.2, left: "30%" , top : "50%" , duration: 1 }, "-=1.0")
