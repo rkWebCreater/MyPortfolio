@@ -12,11 +12,6 @@
   <main class="detail-main">
     <div class="container">
 
-      <!-- 一覧に戻るボタン -->
-      <div class="back-nav">
-        <a href="index.html">← 作品一覧に戻る</a>
-      </div>
-
       <!-- 作品の詳細エリア -->
       <article id="product-detail">
         
@@ -35,7 +30,7 @@
             <div class="info-block">
               <h2>作品について</h2>
               <p id="detail-description"></p>
-              
+              <a href="/index.html#proTtl" id="backBtn">作品一覧に戻る</a>
             </div>
             <img id="mainImg" src="" alt="">
             
@@ -47,8 +42,17 @@
 
     </div>
   </main>
+  <footer class="slide">
+   <div class="slide_track">
+    <ul class="footer_section slider-list"  id="other-product-list">
+    <!-- その他の作品を表示させる -->
+    </ul>
+   </div>
+  </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
   <!--  詳細ページ専用のJavaScriptを読み込む　-->
   <script src="js/detail.js"></script>
+
 </body>
 </html>

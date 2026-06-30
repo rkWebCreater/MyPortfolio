@@ -10,10 +10,10 @@
   {
   
     "id": "project-02",
-    "title": "フードデリバリーバナー",
-    "imgUrl": "image/product/food_coupon.png",
-    "mainImg": "image/detail/food_coupon.png",
-    "description": "ラーメンやチャーハンなど男性が多い中華料理なのでメインカラーにビビット系統の赤色を使い、某フードデリバリーを参考にそのECサイトにあるようなイメージでデザインしました。"
+    "title": "フォトアプリのバナー",
+    "imgUrl": "image/product/photo_app.png",
+    "mainImg": "image/detail/photo_app.png",
+    "description": "ターゲットは20〜50代ファミリー層なので、配色は赤、黄、青を3色使って幅広い年代層にアプローチするように制作しました。アプリの画面も制作し何気ない日常の写真と共に載せることで家族で利用するアルバムアプリというイメージをもってもらうようにデザインしました。視線誘導として最初に真ん中のキャッチコピーとアプリの画面を見てもらい、右上の情報からZ型で誘導していくようにデザインしました。"
   },
   {
     "id": "project-03",
@@ -29,6 +29,13 @@
     "mainImg": "image/detail/event-banner.png",
     "description": "20代～30代の男女向けのイベント紹介バナーでキャンプファイヤーなどの画像を取り入れ、文字や画像に柔らかい雰囲気をもたせてターゲット層に親近感を持ってもらうデザインにしました。"
 
+  },
+  {
+    "id": "project-05",
+    "title": "おにぎり屋のHP",
+    "imgUrl": "image/product/onigiri.png",
+    "mainImg": "image/detail/onigiri_SP.png",
+    "description": "架空のおにぎり屋のHPを制作しました。ターゲットは30〜50代のOL、サラリーマンで和の雰囲気を醸し出すようなデザインにしました。おにぎりの米が白いことから白をベースに、和の雰囲気のお店感を出すために木目調の背景を使いデザインの統一感を出しました。"
   }
   
 ]
