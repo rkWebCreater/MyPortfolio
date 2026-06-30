@@ -1,7 +1,7 @@
 /*デフォルト　スマホ*/
 
 body{
-    background: rgb(242, 242, 242);
+    background: rgb(232 232 232);
 }
 
 #product-detail{
@@ -171,12 +171,14 @@ footer{
   }
   footer{
     width: 15%;
-    height: 100%; 
+    height: 100vh; 
     position: fixed;
     right: 0;
-    bottom: 10%; 
+    bottom: 0; 
+    padding:20px;
     overflow: hidden; 
     z-index: 9999;
+    background: rgb(245, 246, 247);
 
       & .slide_track{
                     position:relative;
@@ -196,7 +198,6 @@ footer{
             & li{
                 height:auto;
                 text-align:center;
-                margin-right: 20px;
                 margin-bottom:30px;
                 flex-shrink: 0;
             
