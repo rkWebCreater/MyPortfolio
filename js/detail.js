@@ -66,56 +66,82 @@ window.addEventListener("DOMContentLoaded", function(){
 
                 // 【最も確実な無限ループ処理】
                 function startGsapSlider() {
+   
                     const mm = gsap.matchMedia();
 
+    
+   
                     // 画面幅769px以上の時（PC）だけアニメーションを実行
+   
                     mm.add("(min-width: 769px)", () => {
-                        
+        
+       
                         // 【超重要②】PCサイズになった「その瞬間」に、JSでHTMLの中身を自動で3倍に増殖させます
+       
                         otherList.innerHTML = originalHtml + originalHtml + originalHtml;
 
-                        // ブラウザが画像を完全に描ききるまで2フレーム待ってから高さを計測（カクつき防止）
-                        requestAnimationFrame(() => {
-                            requestAnimationFrame(() => {
-                                
-                                // 全体の3分の1の高さ（＝元の1セット分の正確なピクセル長さ）を計測
-                                const oneSetHeight = otherList.getBoundingClientRect().height / 3;
+       
+                        let tween; // ここで作成した変数「tween」をそのまま下で使います
+        
+      
+                        // イベントリスナーの関数を定義（クリーンアップで削除できるようにするため）
+      
+                        const handleMouseEnter = () => { if (tween) tween.pause(); };
+                        const handleMouseLeave = () => { if (tween) tween.play(); };
 
-                                // 初期位置リセット
-                                gsap.set(otherList, { y: 0 });
+        // ブラウザが画像を完全に描ききるまで2フレーム待ってから高さを計測（カクつき防止）
+      
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                
+                // 全体の3分の1の高さ（＝元の1セット分の正確なピクセル長さ）を計測
+                const oneSetHeight = otherList.getBoundingClientRect().height / 3;
 
-                                // アニメーションを実行
-                                const tween = gsap.to(otherList, {
-                                    y: `+=${oneSetHeight}`, // 下（プラス）方向へ進める
-                                    ease: "none",     
-                                    duration: 15,           // スピード（秒数）。お好みに合わせて調整してください
-                                    repeat: -1,             // 無限ループ
-                                    modifiers: {
-                                        y: gsap.utils.unitize(y => {
-                                            return gsap.utils.wrap(-oneSetHeight, 0, parseFloat(y));
-                                        })
-                                    }
-                                });
+                // 初期位置リセット
+                gsap.set(otherList, { y: 0 });
 
-                                // 【超重要③】画面サイズがスマホ（768px以下）に変わった瞬間、
-                                // 増殖させたHTMLを消し去り、元の1セット（1倍）に強制リセットします！
-                                return () => {
-                                    tween.kill();
-                                    gsap.set(otherList, { clearProps: "all" });
-                                    otherList.innerHTML = originalHtml; // 1倍に戻す
-                                };
-                            });
-                        });
-                    });
+                // 【修正①】「const tween = 」を削除し、上で作った「tween」にアニメーションを代入します
+                tween = gsap.to(otherList, {
+                    y: +oneSetHeight, // 「+=」ではなく、目標の位置（マイナス1セット分）まで直接等速で引き上げる
+                    ease: "none",     
+                    duration: 10,           // スピード（秒数）。好みに合わせて調整
+                    repeat: -1,             // 無限ループ
+                    modifiers: {
+                        y: gsap.utils.unitize(y => {
+                            return gsap.utils.wrap( -oneSetHeight, 0, parseFloat(y)) -oneSetHeight;
+                        })
+                    }
+                });
 
-                     // 2. スマホサイズ（画面幅768px以下）の時の処理を明示的に追加
-                    mm.add("(max-width: 768px)", () => {
-                        // スマホサイズになった瞬間に、中身を強制的に「元の1倍」に戻して完全停止させる
-                        gsap.killTweensOf(otherList); // otherListにかかっているアニメーションをすべて強制終了
-                        gsap.set(otherList, { clearProps: "all" }); // 移動値を完全リセット
-                        otherList.innerHTML = originalHtml; // HTMLを1倍に戻す
-                    });
-                }
+                // 【修正②】抜けていたマウスホバーのイベントを、ここで実際に登録します
+                otherList.addEventListener('mouseenter', handleMouseEnter);
+                otherList.addEventListener('mouseleave', handleMouseLeave);
+
+                // 【超重要③】画面サイズがスマホ（768px以下）に変わった瞬間、
+                // 増殖させたHTMLを消し去り、元の1セット（1倍）に強制リセットします！
+                return () => {
+                    if (tween) tween.kill();
+                    
+                    // 【修正③】スマホサイズになったらホバーのイベントも一緒に削除します
+                    otherList.removeEventListener('mouseenter', handleMouseEnter);
+                    otherList.removeEventListener('mouseleave', handleMouseLeave);
+                    
+                    gsap.set(otherList, { clearProps: "all" });
+                    otherList.innerHTML = originalHtml; // 1倍に戻す
+                };
+            });
+        });
+    });
+
+     // 2. スマホサイズ（画面幅768px以下）の時の処理を明示的に追加
+    mm.add("(max-width: 768px)", () => {
+        // スマホサイズになった瞬間に、中身を強制的に「元の1倍」に戻して完全停止させる
+        gsap.killTweensOf(otherList); // otherListにかかっているアニメーションをすべて強制終了
+        gsap.set(otherList, { clearProps: "all" }); // 移動値を完全リセット
+        otherList.innerHTML = originalHtml; // HTMLを1倍に戻す
+    });
+}
+
 
                 const checkImages = () => {
                     loadedCount++;
@@ -148,3 +174,5 @@ window.addEventListener("DOMContentLoaded", function(){
        });
 
 });
+
+

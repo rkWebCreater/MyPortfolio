@@ -41,17 +41,22 @@
 
     </div>
   </main>
+  <aside class="other-slides-ttl">
+   <h1>他の作品一覧</h1>
+  </aside>
   <footer class="slide">
    <div class="slide_track">
+    
     <ul class="footer_section slider-list"  id="other-product-list">
     <!-- その他の作品を表示させる -->
     </ul>
    </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js" defer></script>
+  <script src="js/menu.js" defer></script>  <!--defer: HTMLの解析（パース）を邪魔せずに裏でダウンロードし、HTMLの解析がすべて終わった後、必ず記述した「上からの順番通り」に実行されます。必ず ①GSAP本体 ➔ ②menu.js ➔ ③detail.js / style.js の順番が100%保証されます。さらに、HTMLの構造（ボタンやスライダーの id など）が画面上に組み立てられた後に実行されるため、要素が見つからないというエラーも起きません。-->
   <!--  詳細ページ専用のJavaScriptを読み込む　-->
-  <script src="js/detail.js"></script>
+  <script src="js/detail.js" defer></script> <!--async は、他のファイルやHTMLの構造と「完全に独立していて、いつ実行されてもサイトの表示に影響がないシステム」を導入するときにだけ使います。-->
 
 </body>
 </html>

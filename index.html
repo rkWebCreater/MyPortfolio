@@ -54,7 +54,7 @@
 
 <section class="about_section" aria-labelledby ="about-heading">
   <div class="about">
-   <div class="about_ttl_wrapper">
+   <div class="about_ttl_wrapper" id="about-con">
     <div class="about_ttl">
      <h1>経歴</h1>
      <h2 class="back">Back</h2>
@@ -153,7 +153,10 @@
 
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script> <!--jsライブラリはbody終了タグの直前でdefer属性を付与してかつ自作のjsより前で読み込む-->
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
-<script src="style.js" async></script> <!--jsファイルはbody終了タグの直前でasync属性を付与して読み込む-->
+<!-- 3. 【追加】指定の位置へ自動スクロールさせる用（今回のページ遷移後の移動に必須） -->
+ 
+<script src="js/menu.js" defer></script> 
+<script src="style.js" defer></script> <!--jsファイルはbody終了タグの直前でasync属性を付与して読み込む-->
 
 
 </body>

@@ -51,6 +51,8 @@ window.addEventListener("pageshow", function(){
       end: "+=4000", //終了位置
       scrub: 2, //ピン留め
       pin: true, //スクロール量に応じて動かす
+      invalidateOnRefresh : true,
+      anticipatePin : 1 //pin留めのタイミングをブラウザのスクロールよりわずかに先に行う
     }
   });
 
@@ -191,3 +193,40 @@ fetch('product.json')
 });
 
   
+// 【重要】ブラウザ標準の「勝手に前のスクロール位置に戻す機能」を完全にOFFにする
+// これにより、詳細ページから戻ってきた時に画面が変な場所へワープするのを100%防ぎます
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+
+window.addEventListener("load", function() {
+    
+    // 1. URLから「?target=xxxx」のパラメータを取得
+    const urlParams = new URLSearchParams(window.location.search);
+    const targetId = urlParams.get('target');
+
+    // 2. もしターゲット（aboutやcontactなど）が指定されていた場合
+    if (targetId) {
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+            // 【対策①】スクロール開始前に一度、強制的に画面の最上部（0,0）に固定します
+            window.scrollTo(0, 0);
+
+            // 【対策②】GSAPの全ScrollTriggerの位置計算を最新の状態にアップデート（強制リフレッシュ）
+            ScrollTrigger.refresh();
+
+            // 3. ブラウザの描画とGSAPの計算が完全に噛み合うまで、一瞬だけ（150ミリ秒）待ってから優しく動かす
+            setTimeout(() => {
+                gsap.to(window, {
+                    duration: 2.5,              // 少しゆったり（2.5秒）させることで、ズレやガタつきを吸収
+                    scrollTo: {
+                        y: targetElement,       // 目標の要素の位置（#about や #contact）
+                        offsetY: 60             // 画面上の余白（ヘッダーがある場合はその高さ分空ける）
+                    },
+                    ease: "power2.out"          // 非常に滑らかな減速アニメーション
+                });
+            }, 150);
+        }
+    }
+});
