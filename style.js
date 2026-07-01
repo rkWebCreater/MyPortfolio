@@ -59,16 +59,16 @@ window.addEventListener("pageshow", function(){
   //要素を順に拡大する(全てを拡大してから順に消えていく)
   tl.to(".img1", { scale: 0.4, left: "-10%", top: "-10%", duration: 0.7 })        //"-=0.8"は前の要素の始まる0.8秒前に実行するという意味
     .to(".img2", { scale: 0.3, left: "0%", top: "40%", duration: 0.5 }, "-=0.5")
+    .to(".img1", { opacity: 0, filter:"blur(30px)", duration: 1 }, "-=0.2")
     .to(".img3", { scale: 0.1, left: "30%" , top : "40%" , duration: 0.6 }, "-=0.3")
+    .to(".img2", { opacity: 0, filter: "grayscale(300%)", duration: 1 }, "-=0.2")
     .to(".img4", { scale: 0.4, left: "20%" , top: "-5%", duration: 0.7 },"-=0.4")
+    .to(".img3", { opacity: 0, filter: "sepia(300%)", duration: 1 }, "-=0.2")
     .to(".img5", { scale: 0.3, left: "50%", top: "40%", duration: 0.8 }, "-=0.5")
-    .to(".img6", { scale: 0.5, left: "50%" , top : "-20%" , duration: 1 }, "-=0.6")
-    .to(".img1", { opacity: 0, filter:"blur(30px)", duration: 1 }, "-=0.5")
-    .to(".img2", { opacity: 0, filter: "grayscale(300%)", duration: 1 }, "-=0.5")
-    .to(".img3", { opacity: 0, filter: "sepia(300%)", duration: 1 }, "-=0.5")
-    .to(".img4", { opacity: 0,  ease: "power3.inOut" , duration: 1 }, "-=0.5")
-    .to(".img5", { opacity: 0, duration: 1}, "-=0.5") 
-    .to(".img6", { opacity: 0, filter: "grayscale(300%)", duration: 1}, "-=0.5") 
+    .to(".img4", { opacity: 0,  ease: "power3.inOut" , duration: 1 }, "-=0.2")
+    .to(".img6", { scale: 0.5, left: "50%" , top : "-20%" , duration: 1 }, "-=0.6")  
+    .to(".img5", { opacity: 0, duration: 1}, "-=0.2") 
+    .to(".img6", { opacity: 0, filter: "grayscale(300%)", duration: 1}, "-=0.2") 
   });
 
     /* 要素を順に拡大する(1つづつ大きくしてから消えるようにする)
