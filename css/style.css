@@ -44,14 +44,14 @@
 
    @keyframes changeColor {
         0%{
-            color:black;
+            color:beige;
             animation-timing-function: ease-in;
         }
         50%{
             color:rgba(50, 128, 193, 1);
         }
         100%{
-            color:beige;
+            color:white;
         }
     }
 
