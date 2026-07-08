@@ -14,10 +14,10 @@
          width: 100% ;
          overflow: hidden;
          margin-bottom:120px;
-         /* 200degのまま、サイズを縦横2倍にする */
-         background: linear-gradient(300deg, rgba(221, 223, 75, 0.1) 0%, rgba(78, 202, 128, 0.2) 50%, rgba(251, 252, 253, 0.988) 100%);
+         /*グラデーション背景　色を指定して角度は300degのまま、サイズを縦横2倍にする　keyframesでポジションを動かす
+         background: linear-gradient(300deg, rgba(221, 223, 75, 0.1) 0%, rgba(78, 202, 128, 0.2) 50%, rgba(251, 252, 253, 0.988) 100%); 
          background-size: 200% 200%;
-         animation: colorMotion 2s  infinite alternate ease-in-out;
+         animation: colorMotion 2s  infinite alternate ease-in-out;*/
 
          & .mainVisual {
 
