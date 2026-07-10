@@ -1,6 +1,6 @@
 
 
-//gsapスクロールアニメーション-----------------------------
+/*gsapスクロールアニメーション-----------------------------
 window.addEventListener("pageshow", function(){
 
   //プラグインを定義
@@ -84,7 +84,7 @@ window.addEventListener("pageshow", function(){
     .to(".img5", { opacity: 0, duration: 2}, "-=0.2")
     .to(".img6", { scale: 0.5, left: "40%" , top : "-5%" , duration: 1 }, "-=0.5")
     .to(".img6", { opacity: 0, duration: 3}, "-=0.2") 
-    */
+    
     
 //スマホ
   mm.add( "(max-width : 768px)",() => {
@@ -117,7 +117,7 @@ window.addEventListener("pageshow", function(){
   });
 });
 
-//ここまでgsap　ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+ここまでgsap ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー */
 
 //作品紹介の作品欄
 
@@ -131,11 +131,6 @@ window.addEventListener("pageshow", function(event){
 */
   const isBack = event.persisted || (window.performance && window.performance.navigation.type === 2);
 
-  // 「戻る」ボタンで来た場合は、強制リロードしてGSAPと一覧を再描画
-  if (isBack) {
-    window.location.reload();
-    return;
-  }
 
   //htmlの親要素を取得
   const proCon = document.getElementById('product-con');
@@ -192,41 +187,16 @@ fetch('product.json')
 
 });
 
-  
-// 【重要】ブラウザ標準の「勝手に前のスクロール位置に戻す機能」を完全にOFFにする
-// これにより、詳細ページから戻ってきた時に画面が変な場所へワープするのを100%防ぎます
-if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
-}
+//FVのアニメーション
+window.addEventListener('DOMContentLoaded' ,()=>{
 
-window.addEventListener("load", function() {
-    
-    // 1. URLから「?target=xxxx」のパラメータを取得
-    const urlParams = new URLSearchParams(window.location.search);
-    const targetId = urlParams.get('target');
+  const images = document.querySelectorAll('.js_img img');
 
-    // 2. もしターゲット（aboutやcontactなど）が指定されていた場合
-    if (targetId) {
-        const targetElement = document.getElementById(targetId);
+  const delayStep = 1;
 
-        if (targetElement) {
-            // 【対策①】スクロール開始前に一度、強制的に画面の最上部（0,0）に固定します
-            window.scrollTo(0, 0);
+  images.forEach( (img,index)=>{
+    // インデックス番号（0, 1, 2...）に応じて遅延時間を計算
+    img.style.animationDelay = `${index * delayStep}s`;
 
-            // 【対策②】GSAPの全ScrollTriggerの位置計算を最新の状態にアップデート（強制リフレッシュ）
-            ScrollTrigger.refresh();
-
-            // 3. ブラウザの描画とGSAPの計算が完全に噛み合うまで、一瞬だけ（150ミリ秒）待ってから優しく動かす
-            setTimeout(() => {
-                gsap.to(window, {
-                    duration: 2.5,              // 少しゆったり（2.5秒）させることで、ズレやガタつきを吸収
-                    scrollTo: {
-                        y: targetElement,       // 目標の要素の位置（#about や #contact）
-                        offsetY: 60             // 画面上の余白（ヘッダーがある場合はその高さ分空ける）
-                    },
-                    ease: "power2.out"          // 非常に滑らかな減速アニメーション
-                });
-            }, 150);
-        }
-    }
-});
+  })
+} )
